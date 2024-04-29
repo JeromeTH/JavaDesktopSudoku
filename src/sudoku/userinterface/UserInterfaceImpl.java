@@ -19,9 +19,8 @@ import sudoku.constants.GameState;
 import sudoku.problemdomain.Coordinates;
 import javafx.scene.shape.Rectangle;
 import sudoku.problemdomain.SudokuGame;
-
+import javafx.event.Event;
 import java.util.HashMap;
-
 public class UserInterfaceImpl implements IUserInterfaceContract.View,
         EventHandler<KeyEvent> {
 
@@ -244,11 +243,12 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View,
     public void handle(KeyEvent event) {
         if (event.getEventType() == KeyEvent.KEY_PRESSED) {
             if (
-            event.getText().matches("[0-9]");
+            event.getText().matches("[0-9]")
             ){
                 int value = Integer.parseInt(event.getText());
                 handleInput(value, event.getSource());
-            }else if (event.getCode() == KeyCode.BACK_SPACE) {
+            }
+            else if (event.getCode() == KeyCode.BACK_SPACE) {
                 handleInput(0, event.getSource());
 
             } else {
