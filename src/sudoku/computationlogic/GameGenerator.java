@@ -45,7 +45,6 @@ public class GameGenerator {
             int interrupt = 0;
 
             List<Coordinates> allocTracker = new ArrayList<>();
-
             int attempts = 0;
             while(allocations < GRID_BOUNDARY){
                 if(interrupt > 200){
